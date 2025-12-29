@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+</head>
+<body>
+
+<h2>Quiz Completed!</h2>
+
+<p><b>Quiz:</b> {{ quiz.title }}</p>
+
+{% if result %}
+    <p><b>Your Score:</b> {{ result.score }}</p>
+{% else %}
+    <p><b>Your Score:</b> {{ score }}</p>
+{% endif %}
+
+<a href="/">Go Home</a>
+
+</body>
+</html>

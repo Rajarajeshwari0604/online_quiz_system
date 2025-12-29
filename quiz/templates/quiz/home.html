@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Quiz</title>
+</head>
+<body>
+    <h2>Available Quizzes</h2>
+
+    {% if user.is_authenticated %}
+        <p>Welcome, {{ user.username }}</p>
+    {% else %}
+        <a href="/admin/login/">Login</a>
+    {% endif %}
+
+    <ul>
+        {% for quiz in quizzes %}
+            <li>
+                {{ quiz.title }} -
+                <a href="/quiz/{{ quiz.id }}/">Start Quiz</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
